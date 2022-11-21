@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float walkSpeed;
     [SerializeField] float runSpeed;
-    [SerializeField] private float jumpForce=10;
+    [SerializeField] float airMoveSpeed = 3f;
+    [SerializeField] private float jumpForce = 10;
     Vector2 moveInput;
     TouchingDirectionsCheck touchingDirections;
 
@@ -17,15 +18,24 @@ public class PlayerController : MonoBehaviour
     {
         get
         {
-            if (IsMoving)
+            if (IsMoving
+                && !touchingDirections.IsOnWall)
             {
-                if (IsRunning)
+                if (touchingDirections.IsGrounded)
                 {
-                    return runSpeed;
+                    if (IsRunning)
+                    {
+                        return runSpeed;
+                    }
+                    else
+                    {
+                        return walkSpeed;
+                    }
                 }
                 else
                 {
-                    return walkSpeed;
+                    //air move
+                    return airMoveSpeed;
                 }
             }
             else
