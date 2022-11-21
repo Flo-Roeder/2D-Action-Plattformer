@@ -18,29 +18,37 @@ public class PlayerController : MonoBehaviour
     {
         get
         {
-            if (IsMoving
-                && !touchingDirections.IsOnWall)
+            if (CanMove)
             {
-                if (touchingDirections.IsGrounded)
+                if (IsMoving
+                    && !touchingDirections.IsOnWall)
                 {
-                    if (IsRunning)
+                    if (touchingDirections.IsGrounded)
                     {
-                        return runSpeed;
+                        if (IsRunning)
+                        {
+                            return runSpeed;
+                        }
+                        else
+                        {
+                            return walkSpeed;
+                        }
                     }
                     else
                     {
-                        return walkSpeed;
+                        //air move
+                        return airMoveSpeed;
                     }
                 }
                 else
                 {
-                    //air move
-                    return airMoveSpeed;
+                    return 0; //idle speed is 0
                 }
+
             }
             else
             {
-                return 0; //idle speed is 0
+                return 0; //movement lock
             }
         }
     }
@@ -87,6 +95,14 @@ public class PlayerController : MonoBehaviour
                 transform.localScale *= new Vector2(-1, 1);
             }
             _isFacingRight = value;
+        }
+    }
+
+    public bool CanMove
+    {
+        get
+        {
+            return anim.GetBool(AnimationStrings.canMove);
         }
     }
 
@@ -147,10 +163,20 @@ public class PlayerController : MonoBehaviour
     {
         //TODO check if is alive
         if (context.started
-            && touchingDirections.IsGrounded)
+            && touchingDirections.IsGrounded
+            && CanMove)
         {
-            anim.SetTrigger(AnimationStrings.jump);
+            anim.SetTrigger(AnimationStrings.jumpTrigger);
             playerRb.velocity = new Vector2(playerRb.velocity.x, jumpForce);
         }
     }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            anim.SetTrigger(AnimationStrings.attackTrigger);
+        }
+    }
+
 }
