@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirectionsCheck))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float walkSpeed;
     [SerializeField] float runSpeed;
+    [SerializeField] private float jumpForce=10;
     Vector2 moveInput;
+    TouchingDirectionsCheck touchingDirections;
 
     public float CurrentMoveSpeed
     {
@@ -85,23 +87,16 @@ public class PlayerController : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        touchingDirections = GetComponent<TouchingDirectionsCheck>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
 
     private void FixedUpdate()
     {
         playerRb.velocity = new(moveInput.x*CurrentMoveSpeed, playerRb.velocity.y);
+
+        anim.SetFloat(AnimationStrings.yVelocity, playerRb.velocity.y);
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -135,6 +130,17 @@ public class PlayerController : MonoBehaviour
         else if (context.canceled)
         {
             IsRunning = false;
+        }
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        //TODO check if is alive
+        if (context.started
+            && touchingDirections.IsGrounded)
+        {
+            anim.SetTrigger(AnimationStrings.jump);
+            playerRb.velocity = new Vector2(playerRb.velocity.x, jumpForce);
         }
     }
 }
