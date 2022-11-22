@@ -13,4 +13,5 @@ internal class AnimationStrings
     internal static string isOnWall = "isOnWall";
     internal static string attackTrigger = "attack";
     internal static string canMove = "canMove";
+    internal static string hasTarget = "hasTarget";
 }

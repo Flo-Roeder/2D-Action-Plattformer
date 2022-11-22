@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7167966891222007270}
   - component: {fileID: 6395565480374461510}
   - component: {fileID: 2011333373}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 5
   runSpeed: 8
+  airMoveSpeed: 3
   jumpForce: 10
 --- !u!114 &1403602046
 MonoBehaviour:
@@ -173,7 +174,19 @@ MonoBehaviour:
     m_ActionId: 0e4da3c6-065f-4bc5-9381-07f3a2cad64a
     m_ActionName: Player/Look[/Mouse/delta,/Touchscreen/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1403602047}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: fa59e24c-9bd7-47f5-8087-48982a4d261d
     m_ActionName: Player/Fire[/Mouse/leftButton,/Touchscreen/primaryTouch/tap]
   - m_PersistentCalls:
@@ -286,8 +299,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.017944098, y: -0.2685883}
-  m_Size: {x: 0.6325836, y: 1.7272496}
+  m_Offset: {x: 0.017944098, y: -0.2252909}
+  m_Size: {x: 0.6325836, y: 1.6406548}
   m_Direction: 0
 --- !u!114 &6395565480374461510
 MonoBehaviour:
@@ -303,20 +316,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   castFilter:
     useTriggers: 0
-    useLayerMask: 0
+    useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 64
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
   groundDistance: 0.05
+  wallDistance: 0.2
+  ceilingDistance: 0.05
   _isGrounded: 1
+  _isOnWall: 0
 --- !u!114 &2011333373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,4 +360,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   groundDistance: 0.05
+  wallDistance: 0.2
+  ceilingDistance: 0.05
   _isGrounded: 1
+  _isOnWall: 0
