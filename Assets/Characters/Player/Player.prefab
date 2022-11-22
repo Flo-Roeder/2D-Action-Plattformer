@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1403602051}
   - component: {fileID: 7167966891222007270}
   - component: {fileID: 6395565480374461510}
-  - component: {fileID: 2011333373}
+  - component: {fileID: 4403248240339615659}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 570c219a95d75294895fe7c523e3cd1e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -333,7 +333,7 @@ MonoBehaviour:
   ceilingDistance: 0.05
   _isGrounded: 1
   _isOnWall: 0
---- !u!114 &2011333373
+--- !u!114 &4403248240339615659
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -342,25 +342,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5864862794572929897}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 564f9661de7200f4e9e698c82409e5ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 4763aa9e1f318b64ab06540ebe70e71c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  groundDistance: 0.05
-  wallDistance: 0.2
-  ceilingDistance: 0.05
-  _isGrounded: 1
-  _isOnWall: 0

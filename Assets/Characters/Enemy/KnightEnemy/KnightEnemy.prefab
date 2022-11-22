@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 123796445}
   - component: {fileID: 123796443}
   - component: {fileID: 123796444}
+  - component: {fileID: 123796446}
   m_Layer: 8
   m_Name: KnightEnemy
   m_TagString: Untagged
@@ -160,6 +161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 3
+  walkStopRate: 0.005
+  attackZone: {fileID: 1921247900}
 --- !u!114 &123796444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +194,22 @@ MonoBehaviour:
   ceilingDistance: 0.05
   _isGrounded: 1
   _isOnWall: 0
+--- !u!114 &123796446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4288491937872644701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4763aa9e1f318b64ab06540ebe70e71c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _health: 100
+  isInvincible: 0
+  invincibleTime: 0.25
 --- !u!1 &9186312794058197920
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7297400937083395151}
   - component: {fileID: 3684583894186029640}
+  - component: {fileID: 1921247900}
   m_Layer: 10
   m_Name: Detection Zone
   m_TagString: Untagged
@@ -249,3 +269,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1921247900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9186312794058197920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4dc98cd013ebec4db2d173505463d47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectedColliders: []
