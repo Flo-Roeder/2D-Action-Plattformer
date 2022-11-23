@@ -182,7 +182,6 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        //TODO check if is alive
         if (context.started
             && touchingDirections.IsGrounded
             && CanMove)
