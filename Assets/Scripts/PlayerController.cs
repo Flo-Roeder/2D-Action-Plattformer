@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirectionsCheck))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirectionsCheck), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float walkSpeed;
@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce = 10;
     Vector2 moveInput;
     TouchingDirectionsCheck touchingDirections;
+    Damageable damageable;
 
     public float CurrentMoveSpeed
     {
@@ -122,13 +123,17 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingDirectionsCheck>();
+        damageable = GetComponent<Damageable>();
     }
 
  
 
     private void FixedUpdate()
     {
+        if (!damageable.IsHit)
+        {
         playerRb.velocity = new(moveInput.x*CurrentMoveSpeed, playerRb.velocity.y);
+        }
 
         anim.SetFloat(AnimationStrings.yVelocity, playerRb.velocity.y);
     }
@@ -193,6 +198,11 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetTrigger(AnimationStrings.attackTrigger);
         }
+    }
+
+    public void OnHit (int damage, Vector2 knockback)
+    {
+        playerRb.velocity = new Vector2(knockback.x, playerRb.velocity.y + knockback.y);
     }
 
 }

@@ -9497,24 +9497,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1921247898 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9186312794058197920, guid: 43532968c3c987044a16521c7c88be43, type: 3}
-  m_PrefabInstance: {fileID: 1826398460521471900}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1921247900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1921247898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4dc98cd013ebec4db2d173505463d47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectedColliders: []
 --- !u!1001 &1826398460521471900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9523,14 +9505,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 123796443, guid: 43532968c3c987044a16521c7c88be43, type: 3}
-      propertyPath: attackZone
-      value: 
-      objectReference: {fileID: 1921247900}
-    - target: {fileID: 123796443, guid: 43532968c3c987044a16521c7c88be43, type: 3}
-      propertyPath: walkStopRate
-      value: 0.005
-      objectReference: {fileID: 0}
     - target: {fileID: 4288491937872644701, guid: 43532968c3c987044a16521c7c88be43, type: 3}
       propertyPath: m_Name
       value: KnightEnemy
@@ -9633,10 +9607,6 @@ PrefabInstance:
     - target: {fileID: 417808784952823073, guid: 17969a27eac9eef49bd0eff8353952b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548962429588101890, guid: 17969a27eac9eef49bd0eff8353952b2, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5864862794572929897, guid: 17969a27eac9eef49bd0eff8353952b2, type: 3}
       propertyPath: m_Name

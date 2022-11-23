@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D),typeof(TouchingDirectionsCheck))]
+[RequireComponent(typeof(Rigidbody2D),typeof(TouchingDirectionsCheck),typeof(Damageable))]
 public class Knight : MonoBehaviour
 {
     public float walkSpeed = 3f;
@@ -13,6 +13,7 @@ public class Knight : MonoBehaviour
     Rigidbody2D rb;
     TouchingDirectionsCheck touchingDirectionsCheck;
     Animator anim;
+    Damageable damageable;
 
     public enum WalkableDirection
     {
@@ -74,6 +75,7 @@ public class Knight : MonoBehaviour
         rb= GetComponent<Rigidbody2D>();
         touchingDirectionsCheck= GetComponent<TouchingDirectionsCheck>();
         anim= GetComponent<Animator>();
+        damageable = GetComponent<Damageable>();
     }
 
     private void Update()
@@ -89,14 +91,18 @@ public class Knight : MonoBehaviour
         {
             FlipDirection();
         }
-        if (CanMove)
+        if (!damageable.IsHit)
         {
-            rb.velocity= new Vector2(walkSpeed*walkDirectionVector.x, rb.velocity.y);
+            if (CanMove)
+            {
+                rb.velocity = new Vector2(walkSpeed * walkDirectionVector.x, rb.velocity.y);
+            }
+            else
+            {
+                rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x, 0, walkStopRate), rb.velocity.y);
+            }
         }
-        else
-        {
-            rb.velocity= new Vector2(Mathf.Lerp(rb.velocity.x,0, walkStopRate), rb.velocity.y);
-        }
+        
     }
 
     private void FlipDirection()
@@ -113,5 +119,10 @@ public class Knight : MonoBehaviour
         {
             Debug.LogError("no valid direction set");
         }
+    }
+
+    public void OnHit (int damage, Vector2 knockback)
+    {
+        rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
     }
 }
