@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3480418481080916098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.96, y: -1.65, z: 0}
+  m_LocalPosition: {x: 0.96, y: -1.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -71,6 +71,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4dc98cd013ebec4db2d173505463d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noCollidersRemain:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 123796443}
+        m_TargetAssemblyTypeName: Knight, Assembly-CSharp
+        m_MethodName: NoGroundDetected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   detectedColliders: []
 --- !u!1 &4288491937872644701
 GameObject:
@@ -237,6 +252,7 @@ MonoBehaviour:
   walkSpeed: 3
   walkStopRate: 0.005
   attackZone: {fileID: 1921247900}
+  groundDetection: {fileID: 7468557607552340983}
 --- !u!114 &123796444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,4 +465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4dc98cd013ebec4db2d173505463d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noCollidersRemain:
+    m_PersistentCalls:
+      m_Calls: []
   detectedColliders: []
