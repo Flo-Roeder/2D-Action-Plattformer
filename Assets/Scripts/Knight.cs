@@ -9,6 +9,7 @@ public class Knight : MonoBehaviour
     public float walkSpeed = 3f;
     public float walkStopRate = 0.005f;
     public DetectionZone attackZone;
+    public DetectionZone groundDetection;
 
     Rigidbody2D rb;
     TouchingDirectionsCheck touchingDirectionsCheck;
@@ -68,6 +69,18 @@ public class Knight : MonoBehaviour
         } 
     }
 
+    public float AttackCooldown
+    {
+        get
+        {
+            return anim.GetFloat(AnimationStrings.attackCooldown);
+        }
+        private set
+        {
+            anim.SetFloat(AnimationStrings.attackCooldown, Mathf.Max(value,0));
+        }
+    }
+
 
     // Start is called before the first frame update
     void Awake()
@@ -81,6 +94,10 @@ public class Knight : MonoBehaviour
     private void Update()
     {
         HasTarget = attackZone.detectedColliders.Count > 0;
+        if (AttackCooldown>0)
+        {
+        AttackCooldown -= Time.deltaTime;
+        }
     }
 
     // Update is called once per frame
@@ -124,5 +141,13 @@ public class Knight : MonoBehaviour
     public void OnHit (int damage, Vector2 knockback)
     {
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
+    }
+
+    public void NoGroundDetected()
+    {
+        if (touchingDirectionsCheck.IsGrounded)
+        {
+            FlipDirection();
+        }
     }
 }
