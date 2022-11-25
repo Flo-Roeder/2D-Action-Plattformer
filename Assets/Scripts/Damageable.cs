@@ -100,4 +100,15 @@ public class Damageable : MonoBehaviour
             CharacterEvents.characterDamaged.Invoke(gameObject, damage);
         }
     }
+
+    public void Heal(int healAmount)
+    {
+        if (IsAlive) 
+        {
+            int maxHeal= Mathf.Max(MaxHealth-Health, 0);
+            int actualHeal = Mathf.Min(maxHeal, healAmount);
+            Health += actualHeal;
+            CharacterEvents.characterHealed.Invoke(gameObject, actualHeal);
+        }
+    }
 }
