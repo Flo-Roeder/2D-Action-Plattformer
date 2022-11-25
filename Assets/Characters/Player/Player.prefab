@@ -1,5 +1,90 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1137012729181752328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7439740639317191162}
+  - component: {fileID: 2279648887405213413}
+  - component: {fileID: 6872836990522612987}
+  m_Layer: 9
+  m_Name: SwordAttack3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7439740639317191162
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137012729181752328}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 417808784952823073}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2279648887405213413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137012729181752328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a561ef752aea44345bf34c4731a42cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockback: {x: 5, y: 0}
+  attackDamage: 20
+--- !u!60 &6872836990522612987
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137012729181752328}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.16296387, y: -0.053182602}
+      - {x: -0.53996277, y: 0.04750967}
+      - {x: 0.046606064, y: -0.23071313}
+      - {x: -0.04537201, y: -0.4941888}
+      - {x: -0.43185806, y: -0.60141516}
+      - {x: -1.5769815, y: -0.6617944}
+      - {x: -1.8784428, y: -0.44156694}
+      - {x: -2.4756293, y: -0.6611985}
+      - {x: -1.8371624, y: -0.9511342}
+      - {x: -0.3076439, y: -0.9304323}
+      - {x: 0.2223072, y: -0.74941206}
+      - {x: 0.5536394, y: -0.38856846}
+  m_UseDelaunayMesh: 0
 --- !u!1 &2400855902745024467
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +97,7 @@ GameObject:
   - component: {fileID: 2704677872505638642}
   - component: {fileID: 1754979813962618327}
   m_Layer: 9
-  m_Name: SwordAttack
+  m_Name: SwordAttack1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a561ef752aea44345bf34c4731a42cee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockback: {x: 2, y: 0}
+  knockback: {x: 0, y: 0}
   attackDamage: 10
 --- !u!60 &1754979813962618327
 PolygonCollider2D:
@@ -118,6 +203,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8168040679401063354}
+  - {fileID: 4778095908575120377}
+  - {fileID: 7439740639317191162}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -446,3 +533,89 @@ MonoBehaviour:
   _health: 100
   isInvincible: 0
   invincibleTime: 1
+--- !u!1 &6570682156538971653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4778095908575120377}
+  - component: {fileID: 8129035611511616032}
+  - component: {fileID: 969945596994593781}
+  m_Layer: 9
+  m_Name: SwordAttack2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4778095908575120377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6570682156538971653}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 417808784952823073}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8129035611511616032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6570682156538971653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a561ef752aea44345bf34c4731a42cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockback: {x: 1, y: 0}
+  attackDamage: 5
+--- !u!60 &969945596994593781
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6570682156538971653}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.09039116, y: 0.6469345}
+      - {x: -0.70347214, y: 0.68172884}
+      - {x: -0.20017725, y: 0.29353884}
+      - {x: -0.14291763, y: 0.06459522}
+      - {x: -0.13636398, y: -0.20741677}
+      - {x: -0.33842087, y: -0.5548568}
+      - {x: -0.66516495, y: -0.6348438}
+      - {x: -1.1831183, y: -0.66119826}
+      - {x: -1.1441574, y: -1.0492659}
+      - {x: -0.33765984, y: -1.0467174}
+      - {x: -0.066984534, y: -0.9605}
+      - {x: 0.33470154, y: -0.49652958}
+      - {x: 0.34758663, y: 0.089098394}
+  m_UseDelaunayMesh: 0

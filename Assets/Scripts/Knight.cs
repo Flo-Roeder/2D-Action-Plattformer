@@ -7,6 +7,7 @@ using UnityEngine;
 public class Knight : MonoBehaviour
 {
     public float walkSpeed = 3f;
+    public float walkAcceleration = 3f;
     public float walkStopRate = 0.005f;
     public DetectionZone attackZone;
     public DetectionZone groundDetection;
@@ -112,7 +113,8 @@ public class Knight : MonoBehaviour
         {
             if (CanMove)
             {
-                rb.velocity = new Vector2(walkSpeed * walkDirectionVector.x, rb.velocity.y);
+                float xVelocity = Mathf.Clamp(rb.velocity.x + (walkAcceleration*walkDirectionVector.x*Time.fixedDeltaTime),-walkSpeed,walkSpeed);
+                rb.velocity = new Vector2(xVelocity, rb.velocity.y);
             }
             else
             {
