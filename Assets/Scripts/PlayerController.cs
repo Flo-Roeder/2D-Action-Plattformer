@@ -204,4 +204,11 @@ public class PlayerController : MonoBehaviour
         playerRb.velocity = new Vector2(knockback.x, playerRb.velocity.y + knockback.y);
     }
 
+    public void OnRangedAttack(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            anim.SetTrigger(AnimationStrings.rangedAttackTrigger);
+        }
+    }
 }

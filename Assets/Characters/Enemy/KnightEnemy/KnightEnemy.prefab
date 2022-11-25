@@ -250,6 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 3
+  walkAcceleration: 50
   walkStopRate: 0.005
   attackZone: {fileID: 1921247900}
   groundDetection: {fileID: 7468557607552340983}
@@ -314,7 +315,7 @@ MonoBehaviour:
   _maxHealth: 100
   _health: 100
   isInvincible: 0
-  invincibleTime: 0.25
+  invincibleTime: 0.2
 --- !u!1 &8866197712329280402
 GameObject:
   m_ObjectHideFlags: 0

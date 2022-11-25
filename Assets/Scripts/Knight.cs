@@ -111,7 +111,8 @@ public class Knight : MonoBehaviour
         }
         if (!damageable.IsHit)
         {
-            if (CanMove)
+            if (CanMove
+                && touchingDirectionsCheck.IsGrounded)
             {
                 float xVelocity = Mathf.Clamp(rb.velocity.x + (walkAcceleration*walkDirectionVector.x*Time.fixedDeltaTime),-walkSpeed,walkSpeed);
                 rb.velocity = new Vector2(xVelocity, rb.velocity.y);

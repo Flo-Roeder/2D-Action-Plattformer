@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a561ef752aea44345bf34c4731a42cee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockback: {x: 5, y: 0}
+  knockback: {x: 4, y: 0}
   attackDamage: 20
 --- !u!60 &6872836990522612987
 PolygonCollider2D:
@@ -85,6 +85,51 @@ PolygonCollider2D:
       - {x: 0.2223072, y: -0.74941206}
       - {x: 0.5536394, y: -0.38856846}
   m_UseDelaunayMesh: 0
+--- !u!1 &1216243561403874139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1611438533074777624}
+  - component: {fileID: 5333206221805252469}
+  m_Layer: 7
+  m_Name: BowAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1611438533074777624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216243561403874139}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.704, y: -0.145, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 417808784952823073}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5333206221805252469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216243561403874139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f23621b1d45e5048a81422f72e43d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 2500833508254342078, guid: 65e5e85a891222d45958fbf5bd63b4ad, type: 3}
 --- !u!1 &2400855902745024467
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,8 +208,8 @@ PolygonCollider2D:
       - {x: -0.3236847, y: -0.26361275}
       - {x: -0.93960327, y: -0.7829565}
       - {x: -0.14191282, y: -0.84810805}
-      - {x: 0.47519112, y: -0.16871929}
-      - {x: 0.40378284, y: 0.7259874}
+      - {x: 0.40278625, y: -0.22503424}
+      - {x: 0.35551357, y: 0.6696724}
   m_UseDelaunayMesh: 0
 --- !u!1 &5864862794572929897
 GameObject:
@@ -205,6 +250,7 @@ Transform:
   - {fileID: 8168040679401063354}
   - {fileID: 4778095908575120377}
   - {fileID: 7439740639317191162}
+  - {fileID: 1611438533074777624}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -430,6 +476,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 1fc9f3e6-455a-4ee8-a074-9e083131ca78
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1403602047}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnRangedAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a9d5f4fa-1b3f-4f7b-aefc-d7a5aadd4699
+    m_ActionName: Player/RangedAttack[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -616,6 +678,6 @@ PolygonCollider2D:
       - {x: -1.1441574, y: -1.0492659}
       - {x: -0.33765984, y: -1.0467174}
       - {x: -0.066984534, y: -0.9605}
-      - {x: 0.33470154, y: -0.49652958}
-      - {x: 0.34758663, y: 0.089098394}
+      - {x: 0.45537567, y: -0.5528445}
+      - {x: 0.46021748, y: 0.12932342}
   m_UseDelaunayMesh: 0
