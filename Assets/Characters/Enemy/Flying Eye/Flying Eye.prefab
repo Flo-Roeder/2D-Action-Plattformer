@@ -388,5 +388,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  waypointReachedDistance: 0.5
+  waypointReachedDistance: 1
   deathCollider: {fileID: 1890128902}

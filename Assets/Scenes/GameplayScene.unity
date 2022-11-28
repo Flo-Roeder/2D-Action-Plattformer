@@ -10009,10 +10009,6 @@ PrefabInstance:
       value: Flying Eye
       objectReference: {fileID: 0}
     - target: {fileID: 7562398063987264802, guid: 0443560eaf64331499b1eeeef16da29c, type: 3}
-      propertyPath: waypointReachedDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7562398063987264802, guid: 0443560eaf64331499b1eeeef16da29c, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 1813998923}
@@ -10039,10 +10035,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1403602047, guid: 17969a27eac9eef49bd0eff8353952b2, type: 3}
-      propertyPath: jumpForce
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 417808784952823073, guid: 17969a27eac9eef49bd0eff8353952b2, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -10086,10 +10078,6 @@ PrefabInstance:
     - target: {fileID: 417808784952823073, guid: 17969a27eac9eef49bd0eff8353952b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5086286457174150371, guid: 17969a27eac9eef49bd0eff8353952b2, type: 3}
-      propertyPath: m_GravityScale
-      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5864862794572929897, guid: 17969a27eac9eef49bd0eff8353952b2, type: 3}
       propertyPath: m_Name

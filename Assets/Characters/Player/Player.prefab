@@ -481,7 +481,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 2.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -502,7 +502,7 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 8
   airMoveSpeed: 5
-  jumpForce: 14
+  jumpForce: 16
 --- !u!114 &1403602046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -652,6 +652,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a9d5f4fa-1b3f-4f7b-aefc-d7a5aadd4699
     m_ActionName: Player/RangedAttack[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2ac54c7d-693c-46e3-ae5d-28f4d39d933f
+    m_ActionName: UI/Escape[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
